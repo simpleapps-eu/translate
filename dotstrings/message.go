@@ -17,9 +17,12 @@ package dotstrings
 type Message struct {
 	// Fuzzy is true when the source Str is different from the target Ctx value or
 	// when the source ID is missing completely from the target file.
+	// Set in messages loaded from a strings file that are preceeded with a 
+	// comment that contains the word "fuzzy".
 	Fuzzy bool
 	// Missing is true when the ID was not found in the target file. When true both
 	// the target Ctx and Str will contain the source Str.
+	// Set in messages emited by the TranslateMessages function.
 	Missing bool
 	Ctx     string
 	ID      string
